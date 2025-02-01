@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Memories</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="background"></div>
+  <div class="container">
+    <h1>I Love You ❤️</h1>
+    <div class="gallery">
+      <img src="assets/memory1.jpg" alt="Memory 1">
+      <img src="assets/memory3.jpg" alt="Memory 3">
+      <img src="assets/memory5.jpg" alt="Memory 5">
+      <img src="assets/memory7.jpg" alt="Memory 4">
+      <img src="assets/memory9.jpg" alt="Memory 5">
+      <img src="assets/memory11.jpg" alt="Memory 6">
+      <img src="assets/memory13.jpg" alt="Memory 7">
+      <img src="assets/memory2.jpg" alt="Memory 8">
+      <img src="assets/memory4.jpg" alt="Memory 9">
+      <img src="assets/memory6.jpg" alt="Memory 10">
+      <img src="assets/memory8.jpg" alt="Memory 11">
+      <img src="assets/memory10.jpg" alt="Memory 12">
+      <img src="assets/memory12.jpg" alt="Memory 13">
+      <img src="assets/memory15.jpg" alt="Memory 14">
+      <img src="assets/memory14.jpg" alt="Memory 15">
+    </div>
+  </div>
+
+  <audio id="backgroundMusic" loop>
+    <source src="assets/music.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    // Restore audio state
+    const audio = document.getElementById('backgroundMusic');
+    const savedTime = parseFloat(sessionStorage.getItem('audioTime')) || 0;
+    const isPlaying = sessionStorage.getItem('audioPlaying') === 'true';
+
+    audio.currentTime = savedTime;
+    if (isPlaying) {
+      audio.play();
+    }
+  </script>
+</body>
+</html>
